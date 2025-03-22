@@ -6,6 +6,43 @@ import Link from "next/link"
 export default function FeaturedSection() {
   return (
     <div className="bg-gray-100 py-6">
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Martel+Devanagari:wght@300;400;600;700;800&display=swap');
+        
+        .featured-title {
+          font-family: 'Martel Devanagari', serif;
+          letter-spacing: -0.01em;
+          line-height: 1.3;
+          font-weight: 700;
+        }
+        
+        .featured-desc {
+          font-family: 'Martel Devanagari', serif;
+          line-height: 1.6;
+          letter-spacing: 0.01em;
+          font-weight: 400;
+        }
+        
+        .secondary-title {
+          font-family: 'Martel Devanagari', serif;
+          line-height: 1.4;
+          letter-spacing: 0.01em;
+          font-weight: 600;
+        }
+        
+        .meta-text {
+          font-family: 'Martel Devanagari', serif;
+          letter-spacing: 0.02em;
+          font-weight: 400;
+        }
+        
+        .category-badge {
+          font-family: 'Martel Devanagari', serif;
+          letter-spacing: 0.03em;
+          font-weight: 700;
+        }
+      `}</style>
+      
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-2">
@@ -20,27 +57,27 @@ export default function FeaturedSection() {
                     className="w-full h-56 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute top-3 left-3">
-                    <Badge className="bg-red-400 mb-2 shadow-sm">प्रमुख बातमी</Badge>
+                    <Badge className="bg-red-400 mb-2 shadow-sm py-1 px-3 category-badge text-sm">प्रमुख बातमी</Badge>
                   </div>
                 </div>
                 <div className="md:w-1/2 p-5 flex flex-col justify-between border-t md:border-t-0 md:border-l border-gray-100">
                   <div>
-                    <h2 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-indigo-900 transition-colors">
+                    <h2 className="text-2xl text-gray-800 mb-3 group-hover:text-indigo-900 transition-colors featured-title">
                       सायन्स लॅबचा भविष्यात उपयोग होईल – प्रा. शब्बीर नालबंद
                     </h2>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                    <p className="text-base text-gray-600 mb-4 line-clamp-3 featured-desc">
                       खंडाळा – ग्रामीण भागातील विद्यार्थ्यांना या निमी सायन्स लॅबचा भाही आयुष्यात नक्कीच उपयोग होईल, असा विश्वास विद्यालयाचे आचार्य शब्बीर नालबंद यांनी व्यक्त केला.
                     </p>
                   </div>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center text-gray-500 text-sm">
-                      <Clock className="w-3 h-3 mr-1" />
-                      <span>2 days ago</span>
-                      <Eye className="w-3 h-3 ml-3 mr-1" />
+                    <div className="flex items-center text-gray-500 text-sm meta-text">
+                      <Clock className="w-4 h-4 mr-1.5" />
+                      <span className="mr-3">2 days ago</span>
+                      <Eye className="w-4 h-4 mr-1.5" />
                       <span>183 views</span>
                     </div>
-                    <span className="text-indigo-900 text-sm font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      Read More <ArrowRight className="w-3 h-3 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                    <span className="text-indigo-900 text-sm font-semibold flex items-center opacity-0 group-hover:opacity-100 transition-opacity meta-text">
+                      Read More <ArrowRight className="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
                 </div>
@@ -81,18 +118,18 @@ export default function FeaturedSection() {
                     
                     <div className="w-2/3 p-3 flex flex-col justify-between">
                       <div>
-                        <Badge className="bg-indigo-900 text-xs">{item.category}</Badge>
-                        <h3 className="font-medium mt-2 text-sm leading-snug line-clamp-2 group-hover:text-indigo-900 transition-colors">
+                        <Badge className="bg-indigo-900 text-xs py-0.5 px-2.5 category-badge">{item.category}</Badge>
+                        <h3 className="mt-2 text-base leading-snug line-clamp-2 group-hover:text-indigo-900 transition-colors secondary-title">
                           {item.title}
                         </h3>
                       </div>
                       
-                      <div className="flex items-center justify-between text-gray-500 text-xs mt-2">
+                      <div className="flex items-center justify-between text-gray-500 text-xs mt-2 meta-text">
                         <div className="flex items-center">
-                          <Clock className="w-3 h-3 mr-1" />
+                          <Clock className="w-3.5 h-3.5 mr-1" />
                           <span>{item.days} days ago</span>
                         </div>
-                        <span className="text-indigo-900 font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="text-indigo-900 font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                           Read <ArrowRight className="w-3 h-3 ml-1 transform group-hover:translate-x-1 transition-transform" />
                         </span>
                       </div>
